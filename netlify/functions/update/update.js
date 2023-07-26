@@ -58,7 +58,7 @@ exports.handler = async function (event, context, callback) {
 
     return await p;
   }
-  getFylHash().then((bdy) => {
+  await getFylHash().then((bdy) => {
     body.ssh = bdy.ssh;
   });
   
