@@ -1,0 +1,7 @@
+.code-embed-container {
+  display: flex;
+  position: relative;
+}
+.code-embed-code-embed {
+  display: contents;
+}
