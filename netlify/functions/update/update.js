@@ -23,7 +23,7 @@ exports.handler = async function (event, context, callback) {
   fyl = URL.parse("https://api.github.com/repos/elijahducote/djev/contents/blob/main/img/newest.png"),
   cfg = {hostname:fyl.hostname,path:fyl.pathname,method:'PUT',headers:{'Content-Type': 'application/vnd.github+json','Accept':'application/vnd.github+json','Authorization':`Bearer ${process.env.TOKEN}`,'X-GitHub-Api-Version':'2022-11-28'}};
   async function main(str) {
-  const imageBase64WithURI = await encoder.toBase64({ uri: "str" })
+  const imageBase64WithURI = await encoder.toBase64({uri:str})
   return imageBase64WithURI;
   }
 
