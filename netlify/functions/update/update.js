@@ -17,16 +17,19 @@ exports.handler = async function (event, context, callback) {
   }
  
   var uri = body.data.content + "?raw=1",
-  imageToBase64 = require("image-to-base64"),
+  encoder = require("@rossbob/image-to-base64"),
   URL = require("url"),
   https = require("https"),
   fyl = URL.parse("https://api.github.com/repos/elijahducote/djev/contents/blob/main/img/newest.png"),
   cfg = {hostname:fyl.hostname,path:fyl.pathname,method:'PUT',headers:{'Content-Type': 'application/vnd.github+json','Accept':'application/vnd.github+json','Authorization':`Bearer ${process.env.TOKEN}`,'X-GitHub-Api-Version':'2022-11-28'}};
-  imageToBase64(uri).then((response) => {
-            body.data.content = response;
-        }).catch((error) => {
-            console.log(error);
-        });
+  async function main(str) {
+  const imageBase64WithURI = await encoder.toBase64({ uri: "str" })
+  return imageBase64WithURI;
+  }
+
+  main(uri).then((dt) => {
+  body.data.content = dt;
+  }).catch(console.error);
 
   async function getFylHash() {
   var data = "",
