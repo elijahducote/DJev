@@ -15,7 +15,7 @@ exports.handler = async function (event, context, callback) {
     return
   }
  
-  var uri = body.data.content + "?raw=1",
+  var uri = body.data.content + "&raw=1",
   encoder = require("@rossbob/image-to-base64"),
   URL = require("url"),
   https = require("https"),
