@@ -32,12 +32,12 @@ exports.handler = async function (event, context, callback) {
 
   async function getFylHash() {
   var data = "",
-  options = {hostname:fyl.hostname,path:fyl.pathname,method:'GET',headers:{'Content-Type': 'application/vnd.github+json','Accept':'application/vnd.github+json','Authorization':`Bearer ${process.env.TOKEN}`,'X-GitHub-Api-Version':'2022-11-28'}};
+  options = {hostname:fyl.hostname,path:fyl.pathname,method:'GET',headers:{'Content-Type': 'application/vnd.github+json','Accept':'application/vnd.github+json','Authorization':`Bearer ${process.env.TOKEN}`,'X-GitHub-Api-Version':'2022-11-28'}},
+  responseBody = '';
   
   let p = new Promise((resolve, reject) => {
         const req = https.request(options, (res) => {
             res.setEncoding('utf8');
-            let responseBody = '';
 
             res.on('data', (chunk) => {
                 responseBody += chunk;
