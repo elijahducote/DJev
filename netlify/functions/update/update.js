@@ -1,7 +1,6 @@
-//remove await and async
-
 exports.handler = async function (event, context, callback) {
   try {
+    console.log(event)
     var body = JSON.parse(event.body)
   }
   catch (e) {
