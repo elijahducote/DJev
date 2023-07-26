@@ -15,7 +15,7 @@ exports.handler = async function (event, context, callback) {
     return
   }
  
-  var uri = body.data.content + "&raw=1",
+  var uri = body.content + "&raw=1",
   encoder = require("@rossbob/image-to-base64"),
   URL = require("url"),
   https = require("https"),
@@ -27,7 +27,7 @@ exports.handler = async function (event, context, callback) {
   }
 
   main(uri).then((dt) => {
-  body.data.content = dt;
+  body.content = dt;
   }).catch(console.error);
 
   async function getFylHash() {
@@ -59,7 +59,7 @@ exports.handler = async function (event, context, callback) {
     return await p;
   }
   getFylHash().then((bdy) => {
-    body.data.ssh = bdy.data.ssh;
+    body.ssh = bdy.ssh;
   });
   
   
