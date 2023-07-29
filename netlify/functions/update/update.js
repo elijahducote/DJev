@@ -1,7 +1,6 @@
-import fetch from "node-fetch";
-import {arrayBufferToBinaryString} from "blob-util";
-
-var body,
+var {arrayBufferToBinaryString} = require("blob-util"),
+fetch = require("node-fetch"),
+body,
 adm = require("adm-zip"),
 zip,
 sample_png = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=",
