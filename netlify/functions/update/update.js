@@ -1,5 +1,5 @@
 var {arrayBufferToBinaryString} = require("blob-util"),
-fetch = import("node-fetch"),
+fetch = require("node-fetch"),
 body,
 adm = require("adm-zip"),
 zip,
@@ -27,7 +27,6 @@ exports.handler = async function (event) {
   dbx.filesDownload({path:"/Newest"}).then(function(resp) {
       var blob = resp.result.fileBinary;
       zip = new adm(blob);
-     //console.log(arrayBufferToBinaryString(blob))
     })
   return {statusCode:200,body:JSON.stringify({message:"DELIVERED."})};
 };
@@ -37,27 +36,27 @@ const MODES = {FILE:"100644",FOLDER:"040000"},
 TYPE = {BLOB:"blob",TREE:"tree"},
 FILES_TO_COMMIT = [
   {
-    path: "img/newest.png",
+    path: "/img/newest.png",
     content: sample_png
   },
   {
-    path: "img/newer.png",
+    path: "/img/newer.png",
     content: sample_png
   },
    {
-    path: "img/new.png",
+    path: "/img/new.png",
     content: sample_png
   },
   {
-    path: "img/old.png",
+    path: "/img/old.png",
     content: sample_png
   },
   {
-    path: "img/older.png",
+    path: "/img/older.png",
     content: sample_png
   },
   {
-    path: "img/oldest.png",
+    path: "/img/oldest.png",
     content: sample_png
   }
 ],
@@ -123,7 +122,6 @@ const main = async () => {
     data: { sha: newCommitSha },
   });
 };
-
 
 main()
   .catch((error) => console.log(error.response.data));
