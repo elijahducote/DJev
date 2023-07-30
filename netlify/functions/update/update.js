@@ -23,7 +23,7 @@ exports.handler = async function (event) {
   
   });
   
-  var dbx = new Dropbox({accessToken:`${process.env.TOKEN}`,fetch: ketch});
+  var dbx = new Dropbox({accessToken:`${process.env.ACCESS_TOKEN}`,fetch: ketch});
   dbx.filesDownload({path:"/Newest"}).then(function(resp) {
       var blob = resp.result.fileBinary;
       zip = new adm(blob);
