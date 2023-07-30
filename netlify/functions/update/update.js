@@ -11,7 +11,7 @@ ketch = require("isomorphic-fetch"),
 sendr = {"Host":"api.github.com","Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28","Authorization":`${process.env.TOKEN}`};
 
 exports.handler = async function (event) {
-  body = JSON.parse(event.body);
+  body = event.body;
   
   var req = await fetch(git_path, {
     method:"GET",
