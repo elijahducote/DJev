@@ -1,5 +1,6 @@
+import fetch from "node-fetch";
+
 var {arrayBufferToBinaryString} = require("blob-util"),
-fetch = await import("node-fetch"),
 body,
 adm = require("adm-zip"),
 zip,
