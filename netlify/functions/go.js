@@ -1,5 +1,5 @@
 const axios =  require("axios");
-exports.handler = async (event, context) {
+exports.handler = async (event, context)  => {
 var fyl;
 try {
   //const {content} = JSON.parse(event.body);
