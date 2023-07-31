@@ -1,5 +1,5 @@
 var fetch = import("node-fetch"),
-Dropbox = require("dropbox").Dropbox;
+Dropbox = import("dropbox").Dropbox;
 
 export async function handler (event, context) {
 var data = await dbx.filesDownload({accessToken:`${ACCESS_TOKEN}`,path: "/Newest"}).then(async (response) => {
