@@ -1,4 +1,4 @@
-var fetch = require("node-fetch"),
+var fetch = import("node-fetch"),
 Dropbox = require("dropbox").Dropbox;
 
 export async function handler (event, context) {
