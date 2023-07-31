@@ -1,4 +1,3 @@
-const axios =  require("axios");
 exports.handler = async function (event, context)  {
 try {
   const {content} = JSON.parse(event.body);
