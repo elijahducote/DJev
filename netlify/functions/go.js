@@ -6,7 +6,6 @@ try {
   await axios({
   method:"post",
   url:"https://content.dropboxapi.com/2/files/download_zip",
-  responseType:"arrayBuffer",
   headers: {
     "Authorization":`Bearer ${ACCESS_TOKEN}`,
     "Dropbox-API-Arg":"{\"path\":\"/Newest/\"}",
