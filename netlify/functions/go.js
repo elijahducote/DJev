@@ -15,7 +15,7 @@ try {
   params: {
     path:"/Newest/"
   }
-}).then(res) => {
+}).then((res) => {
   fyl = JSON.stringify(res.data)
 })
 return {statusCode:200,body:JSON.stringify({message:fyl})};
