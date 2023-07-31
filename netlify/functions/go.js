@@ -8,11 +8,11 @@ try {
   url:"https://content.dropboxapi.com/2/files/download_zip",
   headers: {
     "Authorization":`Bearer ${ACCESS_TOKEN}`,
-    "Dropbox-API-Arg":"{\"path\":\"/Newest/\"}",
+    "Dropbox-API-Arg":"{\"path\":\"/Newest\"}",
     "Host":"content.dropboxapi.com"
   },
   params: {
-    path:"/Newest/"
+    path:"/Newest"
   }
 }).then((res) => {
   fyl = JSON.stringify(res)
