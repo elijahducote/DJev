@@ -2,7 +2,7 @@
   "name": "dj-ev-music",
   "version": "1.0.0",
   "private": true,
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@craco/craco": "^7.0.0-alpha.0",
     "adm-zip": "^0.5.10",
