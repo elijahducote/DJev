@@ -18,6 +18,7 @@ try {
 }).then((res) => {
   fyl = JSON.stringify(res.data)
 })
+console.log(fyl);
 return {statusCode:200,body:JSON.stringify({message:fyl})};
 } catch (error) {
     console.log(error);
