@@ -13,6 +13,7 @@ await dbx.filesDownload({path: '/Newest'})
   .then(function(response) {
      zip = response.fileBinary;
   });
+console.log(zip)
 return {statusCode:200,body:JSON.stringify({success:zip})};
 } catch (error) {
     console.log(error);
