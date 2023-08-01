@@ -13,7 +13,7 @@ await dbx.filesDownload({path: '/Newest/Album_Cover[1].png'})
 });
 try {
   //const {content} = JSON.parse(event.body);
-return {statusCode:200,body:JSON.stringify({success:zip})};
+return {statusCode:200,body:JSON.stringify({success:true})};
 } catch (error) {
     console.log(error);
     return {
