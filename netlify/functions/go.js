@@ -5,14 +5,17 @@ dbx = new Dropbox({
   clientSecret: process.env.APP_SECRET,
   refreshToken: process.env.REFRESH_TOKEN
 });
-var zip;
+var img;
 exports.handler = async (event, context) => {
-await dbx.filesDownload({path: '/Newest/Album_Cover[1].png'})
+const {content} = JSON.parse(event.body),
+arr = content.split("/"),
+file = arr[arr.length - 1];
+
+await dbx.filesDownload({path: `/Newest/${file}`})
   .then(async (response) => {
-     zip = response.result.fileBinary;
+     img = response.result.fileBinary;
 });
 try {
-  //const {content} = JSON.parse(event.body);
 return {statusCode:200,body:JSON.stringify({success:true})};
 } catch (error) {
     console.log(error);
