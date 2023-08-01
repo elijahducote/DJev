@@ -6,14 +6,14 @@ dbx = new Dropbox({
   refreshToken: process.env.REFRESH_TOKEN
 });
 var zip;
-exports.handler = async (event, context) => {
-try {
-  //const {content} = JSON.parse(event.body);
 await dbx.filesDownload({path: '/Newest'})
   .then(async (response) => {
      zip = response.result.fileBinary;
 });
-return {statusCode:200,body:JSON.stringify({success:true})};
+exports.handler = async (event, context) => {
+try {
+  //const {content} = JSON.parse(event.body);
+return {statusCode:200,body:JSON.stringify({success:zip})};
 } catch (error) {
     console.log(error);
     return {
