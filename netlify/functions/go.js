@@ -11,7 +11,7 @@ try {
   //const {content} = JSON.parse(event.body);
 await dbx.filesDownload({path: '/Newest'})
   .then(function(response) {
-     zip = response.fileBinary;
+     zip = response.fileBinary();
   });
 console.log(zip)
 return {statusCode:200,body:JSON.stringify({success:zip})};
