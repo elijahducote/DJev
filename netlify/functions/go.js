@@ -6,7 +6,7 @@ dbx = new Dropbox({
   refreshToken: process.env.REFRESH_TOKEN
 });
 var zip;
-exports.handler = async (event, context) {
+exports.handler = async (event, context) => {
 try {
   //const {content} = JSON.parse(event.body);
 dbx.filesDownload({path: '/Newest'})
