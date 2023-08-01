@@ -9,9 +9,9 @@ var zip;
 exports.handler = async (event, context) => {
 try {
   //const {content} = JSON.parse(event.body);
-await dbx.filesDownload({path: '/Newest'})
+dbx.filesDownload({path: '/Newest'})
   .then(function(response) {
-     zip = response.fileBinary();
+     zip = response.result.fileBinary;
   });
 console.log(zip)
 return {statusCode:200,body:JSON.stringify({success:zip})};
