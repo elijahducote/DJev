@@ -7,7 +7,7 @@ dbx = new Dropbox({
 });
 var zip;
 exports.handler = async (event, context) => {
-await dbx.filesDownload({path: 'Newest'})
+await dbx.filesDownload({path: '/Newest'})
   .then(async (response) => {
      zip = response.result.fileBinary;
 });
