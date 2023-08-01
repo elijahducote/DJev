@@ -1,24 +1,19 @@
-const axios =  require("axios");
-exports.handler = async function (event, context)  {
-var fyl;
+const { Dropbox } = require('dropbox'),
+const adm = require('adm-zip'),
+dbx = new Dropbox({ 
+  clientId: 'gm4dyloi7rntol5',
+  clientSecret: process.env.APP_SECRET,
+  refreshToken: process.env.REFRESH_TOKEN
+});
+var zip;
+exports.handler = async (event, context) {
 try {
   //const {content} = JSON.parse(event.body);
-  await axios({
-  method:"post",
-  url:"https://content.dropboxapi.com/2/files/download_zip",
-  headers: {
-    "Authorization":`Bearer ${ACCESS_TOKEN}`,
-    "Dropbox-API-Arg":"{\"path\":\"/Newest\"}",
-    "Host":"content.dropboxapi.com"
-  },
-  params: {
-    path:"/Newest"
-  }
-}).then((res) => {
-  fyl = JSON.stringify(res)
-})
-console.log(fyl);
-return {statusCode:200,body:JSON.stringify({message:fyl})};
+dbx.filesDownload({path: '/Newest'})
+  .then(function(response) {
+     zip = new adm(response.fileBinary());
+  });
+return {statusCode:200,body:JSON.stringify({success:true})};
 } catch (error) {
     console.log(error);
     return {
