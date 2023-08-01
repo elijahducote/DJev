@@ -11,10 +11,9 @@ try {
   //const {content} = JSON.parse(event.body);
 dbx.filesDownload({path: '/Newest'})
   .then(function(response) {
-     zip = response.result.fileBinary;
+     zip = response;
   });
-console.log(zip)
-return {statusCode:200,body:JSON.stringify({success:zip})};
+return {statusCode:200,body:JSON.stringify({success:true})};
 } catch (error) {
     console.log(error);
     return {
