@@ -13,7 +13,7 @@ dbx.filesDownload({path: '/Newest'})
   .then(function(response) {
      zip = response;
   });
-return {statusCode:200,body:JSON.stringify({success:true})};
+return {statusCode:200,body:JSON.stringify({success:zip.length})};
 } catch (error) {
     console.log(error);
     return {
