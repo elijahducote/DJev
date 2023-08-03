@@ -108,7 +108,7 @@ mnu.style.display = "none";
             <div className="d-ev-music-row02">
               <img
                 alt="image"
-                src="/external/threads.svg"
+                src="/external/threads1.svg"
                 className="d-ev-music-image"
               />
             </div>
@@ -120,7 +120,7 @@ mnu.style.display = "none";
               >
                 <img
                   alt="image"
-                  src="/external/twitter.svg"
+                  src="/external/x1.svg"
                   className="d-ev-music-image1"
                 />
               </a>
@@ -167,21 +167,27 @@ mnu.style.display = "none";
             </a>
           </div>
           <div className="d-ev-music-row07">
-            <img
-              alt="image"
-              src="/external/threads.svg"
-              className="d-ev-music-image3"
-            />
-          </div>
-          <div className="d-ev-music-row08">
             <a
-              href="https://twitter.com/_evmusic_"
+              href="https://www.threads.net/@evmusic"
               target="_blank"
               rel="noreferrer noopener"
             >
               <img
                 alt="image"
-                src="/external/twitter.svg"
+                src="/external/threads1.svg"
+                className="d-ev-music-image3"
+              />
+            </a>
+          </div>
+          <div className="d-ev-music-row08">
+            <a
+              href="https://x.com/_evmusic_"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                alt="image"
+                src="/external/x1.svg"
                 className="d-ev-music-image4"
               />
             </a>
@@ -207,7 +213,7 @@ mnu.style.display = "none";
           href="https://soundcloud.com/yearthree/sets/dj-set-1"
           target="_blank"
           rel="noreferrer noopener"
-          className="d-ev-music-link8 button"
+          className="d-ev-music-link09 button"
         >
           <span className="d-ev-music-text06">
             <span className="d-ev-music-text07">Listen Now</span>

@@ -123,7 +123,7 @@
   text-decoration: none;
 }
 .d-ev-music-row01 {
-  fill: #833AB4;
+  fill: #D25D6F;
   display: inline-block;
 }
 .d-ev-music-icon06 {
@@ -134,11 +134,11 @@
   text-decoration: none;
 }
 .d-ev-music-row02 {
-  fill: #FFFFFF;
+  fill: #D25D6F;
   display: inline-block;
 }
 .d-ev-music-image {
-  fill: #FFFFFF;
+  fill: #D25D6F;
   width: 1.6rem;
   height: 1.6rem;
   margin-right: 1rem;
@@ -190,7 +190,7 @@
   text-decoration: none;
 }
 .d-ev-music-row06 {
-  fill: #833AB4;
+  fill: #D25D6F;
   display: inline-block;
 }
 .d-ev-music-icon10 {
@@ -201,22 +201,22 @@
   text-decoration: none;
 }
 .d-ev-music-row07 {
-  fill: #FFFFFF;
+  fill: #D25D6F;
   display: inline-block;
 }
 .d-ev-music-image3 {
-  fill: #FFFFFF;
+  fill: #D25D6F;
   width: 1.6rem;
   height: 1.6rem;
   margin-right: 1rem;
   text-decoration: none;
 }
 .d-ev-music-row08 {
-  fill: #1D9BF0;
+  fill: #FFFFFF;
   display: inline-block;
 }
 .d-ev-music-image4 {
-  fill: #1D9BF0;
+  fill: #FFFFFF;
   width: 1.6rem;
   height: 1.6rem;
   margin-right: 1rem;
@@ -257,7 +257,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.d-ev-music-link8 {
+.d-ev-music-link09 {
   top: 60vh;
   color: var(--dl-color-gray-black);
   border: .4rem solid #FFF;
@@ -277,7 +277,7 @@
   text-decoration: none;
   background-color: #FFF;
 }
-.d-ev-music-link8:hover {
+.d-ev-music-link09:hover {
   transform: scale(1.02);
 }
 .d-ev-music-text06 {
@@ -692,7 +692,7 @@
   font-variant: small-caps;
 }
 @media(max-width: 1600px) {
-  .d-ev-music-link8 {
+  .d-ev-music-link09 {
     color: var(--dl-color-gray-black);
     font-style: normal;
     font-weight: 400;

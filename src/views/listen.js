@@ -116,7 +116,7 @@ const Listen = (props) => {
             <div className="listen-row02">
               <img
                 alt="image"
-                src="/external/threads.svg"
+                src="/external/threads1.svg"
                 className="listen-image"
               />
             </div>
@@ -128,7 +128,7 @@ const Listen = (props) => {
               >
                 <img
                   alt="image"
-                  src="/external/twitter.svg"
+                  src="/external/x1.svg"
                   className="listen-image1"
                 />
               </a>
@@ -175,21 +175,27 @@ const Listen = (props) => {
             </a>
           </div>
           <div className="listen-row07">
-            <img
-              alt="image"
-              src="/external/threads.svg"
-              className="listen-image3"
-            />
-          </div>
-          <div className="listen-row08">
             <a
-              href="https://twitter.com/_evmusic_"
+              href="https://www.threads.net/@evmusic"
               target="_blank"
               rel="noreferrer noopener"
             >
               <img
                 alt="image"
-                src="/external/twitter.svg"
+                src="/external/threads1.svg"
+                className="listen-image3"
+              />
+            </a>
+          </div>
+          <div className="listen-row08">
+            <a
+              href="https://x.com/_evmusic_"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                alt="image"
+                src="/external/x1.svg"
                 className="listen-image4"
               />
             </a>

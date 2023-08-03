@@ -145,7 +145,7 @@ mnu.style.display = "none";
             <div className="bookings-row02">
               <img
                 alt="image"
-                src="/external/threads.svg"
+                src="/external/threads1.svg"
                 className="bookings-image"
               />
             </div>
@@ -157,7 +157,7 @@ mnu.style.display = "none";
               >
                 <img
                   alt="image"
-                  src="/external/twitter.svg"
+                  src="/external/x1.svg"
                   className="bookings-image1"
                 />
               </a>
@@ -204,21 +204,27 @@ mnu.style.display = "none";
             </a>
           </div>
           <div className="bookings-row07">
-            <img
-              alt="image"
-              src="/external/threads.svg"
-              className="bookings-image3"
-            />
-          </div>
-          <div className="bookings-row08">
             <a
-              href="https://twitter.com/_evmusic_"
+              href="https://www.threads.net/@evmusic"
               target="_blank"
               rel="noreferrer noopener"
             >
               <img
                 alt="image"
-                src="/external/twitter.svg"
+                src="/external/threads1.svg"
+                className="bookings-image3"
+              />
+            </a>
+          </div>
+          <div className="bookings-row08">
+            <a
+              href="https://x.com/_evmusic_"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                alt="image"
+                src="/external/x1.svg"
                 className="bookings-image4"
               />
             </a>
