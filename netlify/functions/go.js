@@ -14,7 +14,7 @@ arr = content.split("/"),
 file = arr[arr.length - 1];
 
 await axios({
-    url: "https://api.github.com/repos/elijahducote/djev/contents/img/Newest.png",
+    url: "https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",
     method: "GET",
     headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}
 }).then(async (response) => {
