@@ -110,7 +110,7 @@ mnu.style.display = "none";
                     rel="noreferrer noopener"
                     className="bookings-link01"
                   >
-                    Events
+                    Merch
                   </a>
                 </div>
               </div>

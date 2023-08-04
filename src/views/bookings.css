@@ -520,7 +520,9 @@
     margin-right: 10vw;
   }
   .bookings-link01 {
+    font-size: 1.75rem;
     margin-right: 10vw;
+    text-decoration: none;
   }
   .bookings-text07 {
     font-family: Courier New;

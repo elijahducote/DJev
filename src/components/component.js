@@ -41,7 +41,7 @@ AppComponent.defaultProps = {
   text: 'Home',
   text2: 'Bookings',
   rootClassName: '',
-  text3: 'Events',
+  text3: 'Merch',
   text1: 'Listen',
 }
 
