@@ -27,7 +27,7 @@ await dbx.filesDownload({path: `/Newest/${file}`})
      img = Base64.btoa(response.result.fileBinary);
 });
 await axios({
-    url: "https://api.github.com/repos/elijahducote/djev/contents/img/Newest.png",
+    url: "https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",
     method: "PUT",
     headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"},
     data: { message:"update file", sha: hash, content:img}
