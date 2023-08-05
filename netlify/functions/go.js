@@ -27,7 +27,7 @@ await dbx.filesDownload({path: `/Newest/${file}`})
   .then(async (response) => {
      img = arrayBufferToBinaryString(response.result.fileBinary);
 });
-img = Base64.btoa(img);
+img = Base64.encode(img);
 
 await axios({
     url: "https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",
