@@ -11,8 +11,9 @@ hash;
 exports.handler = async (event, context) => {
 const {content} = JSON.parse(event.body),
 path = url.parse(content),
-file = url.pathname.split("/"),
-dir = file[file.length - 1];
+file = url.pathname,
+name = file.split("/"),
+dir = name[name.length - 1];
 
 
 const { data: response } = await axios.get("https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",{headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}});
