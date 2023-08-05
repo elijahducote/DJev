@@ -1,6 +1,5 @@
 const { Dropbox } = require("dropbox"),
 {Base64} = require("js-base64"),
-{arrayBufferToBinaryString} = require("blob-util"),
 axios = require("axios"),
 dbx = new Dropbox({ 
   clientId: "gm4dyloi7rntol5",
@@ -25,7 +24,7 @@ hash = response.data.sha;
 
 await dbx.filesDownload({path: `/Newest/${file}`})
   .then(async (response) => {
-     img = arrayBufferToBinaryString(response.result.fileBinary);
+     img = response.result.fileBinary;
 });
 img = Base64.encode(img);
 
