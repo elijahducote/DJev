@@ -5,6 +5,7 @@
   "dependencies": {
     "@craco/craco": "^7.0.0-alpha.0",
     "axios": "^1.4.0",
+    "blob-util": "^2.0.2",
     "dangerous-html": "^0.1.13",
     "dropbox": "^10.34.0",
     "js-base64": "^3.7.5",
