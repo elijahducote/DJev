@@ -12,25 +12,14 @@ const {content} = JSON.parse(event.body),
 arr = content.split("/"),
 file = arr[arr.length - 1];
 
-await axios({
-    url: "https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",
-    method: "GET",
-    headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}
-}).then(async (response) => {
-hash = response.data.sha;
-});
+const { data: response } = await axios.get("https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",{responseType:"json",headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}});
 
 await dbx.filesDownload({path: `/Newest/${file}`})
   .then(async (response) => {
-     img = Buffer.from(response.result.fileBinary).toString('base64');
+     img = Buffer.from(response.result.fileBinary).toString("base64");
 });
 
-await axios({
-    url: "https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",
-    method: "PUT",
-    headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"},
-    data: { "message":"update file", "sha": hash, "content":img}
-});
+await axios.put("https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",{"message":"update file", "sha": hash,"content":img},{responseType: "json",headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}});
 try {
 return {statusCode:200,body:JSON.stringify({success:true})};
 } catch (error) {
