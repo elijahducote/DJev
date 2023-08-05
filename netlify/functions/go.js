@@ -12,14 +12,15 @@ exports.handler = async (event, context) => {
 const {content} = JSON.parse(event.body),
 path = url.parse(`${content}`,true),
 names = path.pathname.split("/"),
-dir = names[names.length - 1];
+dir = names[names.length - 1],
+enc = dir.split("-").join(" ");
 
 
 const { data: response } = await axios.get("https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",{headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}});
 
 hash = response.sha;
 
-await dbx.filesDownload({path: `/Newest/typorama(1).png`}).then(async (response) => {
+await dbx.filesDownload({path: `/Newest/${enc}`}).then(async (response) => {
      img = Buffer.from(response.result.fileBinary).toString("base64");
 });
 
