@@ -1,5 +1,5 @@
 const { Dropbox } = require("dropbox"),
-{Url} = require("url"),
+url = require("url"),
 axios = require("axios"),
 dbx = new Dropbox({ 
   clientId: "gm4dyloi7rntol5",
@@ -10,7 +10,7 @@ var img,
 hash;
 exports.handler = async (event, context) => {
 const {content} = JSON.parse(event.body),
-path = new Url(content);
+path = url.parse(`${content}`,true);
 //file = url.pathname;
 
 
