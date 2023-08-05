@@ -19,7 +19,7 @@ const { data: response } = await axios.get("https://api.github.com/repos/elijahd
 
 hash = response.sha;
 
-await dbx.filesDownload({path: `/Newest/${dir}`}).then(async (response) => {
+await dbx.filesDownload({path: `/Newest/typorama(1).png`}).then(async (response) => {
      img = Buffer.from(response.result.fileBinary).toString("base64");
 });
 
