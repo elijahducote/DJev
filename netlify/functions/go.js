@@ -1,5 +1,4 @@
 const { Dropbox } = require("dropbox"),
-{Base64} = require("js-base64"),
 axios = require("axios"),
 dbx = new Dropbox({ 
   clientId: "gm4dyloi7rntol5",
@@ -21,18 +20,16 @@ await axios({
 hash = response.data.sha;
 });
 
-
 await dbx.filesDownload({path: `/Newest/${file}`})
   .then(async (response) => {
-     img = response.result.fileBinary;
+     img = Buffer.from(response.result.fileBinary).toString('base64');
 });
-img = Base64.encode(img);
 
 await axios({
     url: "https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",
     method: "PUT",
     headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"},
-    data: { message:"update file", sha: hash, content:img}
+    data: { "message":"update file", "sha": hash, "content":img}
 });
 try {
 return {statusCode:200,body:JSON.stringify({success:true})};
