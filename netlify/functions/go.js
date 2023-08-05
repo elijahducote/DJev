@@ -14,7 +14,7 @@ file = arr[arr.length - 1];
 
 if (!file.length) file = arr[arr.length - 2];
 
-const { data: response } = await axios.get("https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",{headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}});
+var { data: response } = await axios.get("https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",{headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}});
 
 hash = response;
 
