@@ -20,13 +20,13 @@ const { data: response } = await axios.get("https://api.github.com/repos/elijahd
 
 hash = response.sha;
 
-await dbx.filesDownload({path: `/Newest/${dir}`}).then(async (response) => {
-     img = Buffer.from(response.result.fileBinary).toString("base64");
-});
+//await dbx.filesDownload({path: `/Newest/${dir}`}).then(async (response) => {
+//     img = Buffer.from(response.result.fileBinary).toString("base64");
+//});
 
-await axios.put("https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",{"message":"update file", "sha":hash,"content":img},{headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}});
+//await axios.put("https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",{"message":"update file", "sha":hash,"content":img},{headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${process.env.TOKEN}`,"X-GitHub-Api-Version":"2022-11-28"}});
 try {
-return {statusCode:200,body:JSON.stringify({success:true,resp:hash})};
+return {statusCode:200,body:JSON.stringify({success:true,resp:dir})};
 } catch (error) {
     console.log(error);
     return {
