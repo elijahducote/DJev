@@ -11,7 +11,7 @@ hash;
 exports.handler = async (event, context) => {
 const {content} = JSON.parse(event.body),
 path = url.parse(`${content}`,true),
-names = path.split("/"),
+names = path.pathname.split("/"),
 dir = names[names.length - 1];
 //file = url.pathname;
 
