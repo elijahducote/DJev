@@ -24,7 +24,7 @@ hash = response.data.sha;
 
 await dbx.filesDownload({path: `/Newest/${file}`})
   .then(async (response) => {
-     img = Base64.btoa(response.result.fileBinary);
+     img = Base64.encode(response.result.fileBinary);
 });
 await axios({
     url: "https://api.github.com/repos/elijahducote/djev/contents/img/newest.png",
