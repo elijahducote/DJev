@@ -10,7 +10,7 @@ var img,
 hash;
 exports.handler = async (event, context) => {
 const {content} = JSON.parse(event.body),
-path = url.parse(content);
+path = new Url(content);
 //file = url.pathname;
 
 
