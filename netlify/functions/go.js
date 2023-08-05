@@ -9,8 +9,8 @@ dbx = new Dropbox({
 var img,
 hash;
 exports.handler = async (event, context) => {
-const {content} = JSON.parse(event.body);
-path = url.parse(content),
+const {content} = JSON.parse(event.body),
+path = url.parse(content);
 //file = url.pathname;
 
 
