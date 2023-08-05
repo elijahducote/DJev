@@ -223,7 +223,7 @@ mnu.style.display = "none";
       </div>
       <img
         alt="image"
-        src="https://raw.githubusercontent.com/Alendrone/DJev/a6e8a39bdc2abf028284023939bb733bae19fb36/cdn/beach.png"
+        src="../../img/newest.png"
         className="d-ev-music-image6 filtered"
       />
       <div className="d-ev-music-container03">
