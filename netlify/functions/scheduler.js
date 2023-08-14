@@ -12,7 +12,7 @@ dayjs.extend(timezone);
 
 dayjs.tz.setDefault("America/Chicago");
 
-var {dayt,relatym,onbord,uri} = JSON.parse(event.body),
+var {dayt,relatym,onbord} = JSON.parse(event.body),
 raw = JSON.parse(json),
 honor = dayjs.tz(dayjs().format());
 //path = url.parse(uri,true),
