@@ -1,7 +1,6 @@
 const {Dropbox} = require("dropbox"),
 {dayjs} = require("dayjs"),
 fs = require("fs/promises"),
-json = await fs.readFile("instagram.json"),
 utc = require("dayjs/plugin/utc"),
 minMax = require("dayjs/plugin/minMax"),
 timezone = require("dayjs/plugin/timezone");
@@ -15,6 +14,7 @@ dayjs.extend(minMax);
 dayjs.tz.setDefault("America/Chicago");
 
 var {dayt,relatym,onbord} = JSON.parse(event.body),
+json = await fs.readFile("instagram.json"),
 raw = JSON.parse(json),
 honor = dayjs.tz(dayjs().format());
 //path = url.parse(uri,true),
