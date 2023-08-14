@@ -3,12 +3,14 @@ const {Dropbox} = require("dropbox"),
 fs = require("fs/promises"),
 json = await fs.readFile("instagram.json"),
 utc = require("dayjs/plugin/utc"),
+minMax = require("dayjs/plugin/minMax"),
 timezone = require("dayjs/plugin/timezone");
 
 exports.handler = async (event, context) => {
 try {
 dayjs.extend(utc);
 dayjs.extend(timezone);
+dayjs.extend(minMax);
 
 dayjs.tz.setDefault("America/Chicago");
 
