@@ -14,7 +14,7 @@ dayjs.extend(minMax);
 dayjs.tz.setDefault("America/Chicago");
 
 var {dayt,relatym,onbord} = JSON.parse(event.body),
-json = await fs.readFile("./instagram.json"),
+json = await fs.readFile(__dirname + "/instagram.json"),
 raw = JSON.parse(json),
 honor = dayjs.tz(dayjs().format());
 //path = url.parse(uri,true),
