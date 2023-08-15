@@ -51,7 +51,7 @@ await dbx.filesListFolder({path:`/SMM/Instagram/${today}`,include_deleted:false}
 });
 for (;nth;--nth) {
   if (tab[nth - 1].tag !== "file") continue;
-  assort.push(tab[nth - 1].client_modified);
+  assort.push(dayjs(tab[nth - 1].client_modified));
 }
 latest = dayjs.max(assort);
 
@@ -62,7 +62,7 @@ latest = dayjs.max(assort);
 //var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:assort,name:hr})};
+return {statusCode:200,body:JSON.stringify({success:assort,name:aasort})};
 } catch (error) {
     console.log(error);
     return {
