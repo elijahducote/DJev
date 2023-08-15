@@ -34,7 +34,6 @@ today = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][dayt],
 hr = honor.hour(),
 ndx,
 assort = [],
-min,
 latest,
 tab,
 nth;
@@ -58,11 +57,10 @@ latest = dayjs.max(assort);
 //for (;ndx;--ndx) {
 //if (dayjs(latest).isSame(assort[ndx - 1])) break;
 //}
-min = latest.second()
 //var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:min})};
+return {statusCode:200,body:JSON.stringify({success:dayjs(latest).format()})};
 } catch (error) {
     return {
       statusCode: 500,
