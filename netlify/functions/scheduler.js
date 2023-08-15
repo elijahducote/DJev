@@ -1,6 +1,6 @@
 const {Dropbox} = require("dropbox"),
 dayjs = require("dayjs"),
-json = require("instagram.json"),
+json = require("../../instagram.json"),
 fs = require("fs/promises"),
 utc = require("dayjs/plugin/utc"),
 minMax = require("dayjs/plugin/minMax"),
