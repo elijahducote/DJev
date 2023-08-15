@@ -29,7 +29,7 @@ honor = dayjs.tz(dayjs().format());
 return {statusCode:400,body:JSON.stringify({error:`Malformed Request: ${err}`})};
 }
 
-var kairos = [0,0],
+var kairos = [false,false,false],
 today = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][dayt],
 hr = honor.day(),
 ndx,
