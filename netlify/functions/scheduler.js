@@ -55,14 +55,14 @@ for (;nth;--nth) {
 }
 latest = dayjs.max(assort);
 
-for (;ndx;--ndx) {
-if (dayjs(latest).isSame(assort[ndx - 1])) break;
-}
+//for (;ndx;--ndx) {
+//if (dayjs(latest).isSame(assort[ndx - 1])) break;
+//}
 
-var fyl = tab[ndx - 1].name;
+//var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:hr})};
+return {statusCode:200,body:JSON.stringify({success:latest})};
 } catch (error) {
     console.log(error);
     return {
