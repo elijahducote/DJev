@@ -44,7 +44,7 @@ if (hr <= (relatym + 1)) kairos[2] = true;
 
 if (kairos[0] && kairos[1] && kairos[2]) {
 
-await dbx.filesListFolder({path:`/SMM/Instagram/${today}`,include_deleted:false,limit:256}).then(async (response) => {
+await dbx.filesListFolder({path:`/SMM/Instagram/${today}`,include_deleted:false}).then(async (response) => {
    tab = response.result.entries;
    nth = response.result.entries.length;
    ndx = response.result.entries.length;
