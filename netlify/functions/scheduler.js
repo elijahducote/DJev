@@ -39,8 +39,8 @@ tab,
 nth;
 
 if (honor.day() === dayt) kairos[0] = true;
-if (hr >= relatym) kairos[1] = true;
-if (hr <= (relatym + 1)) kairos[2] = true;
+//if (hr >= relatym) kairos[1] = true;
+//if (hr <= (relatym + 1)) kairos[2] = true;
 
 if (kairos[0] && kairos[1]) {
 
