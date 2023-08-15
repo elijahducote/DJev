@@ -60,7 +60,7 @@ if (dayjs(latest).isSame(assort[ndx - 1])) break;
 var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:file})};
+return {statusCode:200,body:JSON.stringify({success:fyl})};
 } catch (error) {
     return {
       statusCode: 500,
