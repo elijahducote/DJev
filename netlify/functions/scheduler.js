@@ -58,7 +58,7 @@ if (latest.isSame(assort[ndx - 1])) break;
 var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:true,file:fyl})};
+return {statusCode:200,body:JSON.stringify({success:true,file:tab})};
 } catch (error) {
     console.log(error);
     return {
