@@ -19,7 +19,7 @@ dayjs.extend(minMax);
 dayjs.tz.setDefault("America/Chicago");
 
 var {dayt,relatym,onbord} = JSON.parse(event.body),
-honor = dayjs.tz(dayjs().format());
+honor = dayjs.tz();
 //path = url.parse(uri,true),
 //names = path.pathname.split("/"),
 //dir = names[names.length - 1];
