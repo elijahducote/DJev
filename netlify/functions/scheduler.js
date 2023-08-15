@@ -33,7 +33,7 @@ var kairos = [0,0],
 today = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][dayt],
 hr = honor.day(),
 ndx,
-assort,
+assort = [],
 latest,
 tab,
 nth;
