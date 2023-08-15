@@ -64,7 +64,6 @@ min = latest.minute()
 try {
 return {statusCode:200,body:JSON.stringify({success:min})};
 } catch (error) {
-    console.log(error);
     return {
       statusCode: 500,
       body: JSON.stringify( { error: " Failed fetching resources " } ),
