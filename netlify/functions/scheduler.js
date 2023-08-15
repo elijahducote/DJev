@@ -58,7 +58,7 @@ latest = dayjs.max(assort);
 //for (;ndx;--ndx) {
 //if (dayjs(latest).isSame(assort[ndx - 1])) break;
 //}
-min = latest.minute()
+min = latest.second()
 //var fyl = tab[ndx - 1].name;
 }
 try {
