@@ -42,7 +42,7 @@ if (honor.day() === dayt) kairos[0] = true;
 //if (hr >= relatym) kairos[1] = true;
 //if (hr <= (relatym + 1)) kairos[2] = true;
 
-if (kairos[0] && kairos[1]) {
+if (kairos[0]) {
 
 await dbx.filesListFolder({path:`/SMM/Instagram/${today}`,include_deleted:false}).then(async (response) => {
    tab = response.result.entries;
@@ -62,7 +62,7 @@ if (latest.isSame(assort[ndx - 1])) break;
 var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:today})};
+return {statusCode:200,body:JSON.stringify({success:hr})};
 } catch (error) {
     console.log(error);
     return {
