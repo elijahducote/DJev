@@ -34,6 +34,7 @@ today = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][dayt],
 hr = honor.hour(),
 ndx,
 assort = [],
+min,
 latest,
 tab,
 nth;
@@ -54,15 +55,14 @@ for (;nth;--nth) {
   assort.push(dayjs(tab[nth - 1].server_modified).tz());
 }
 latest = dayjs.max(assort);
-
 //for (;ndx;--ndx) {
 //if (dayjs(latest).isSame(assort[ndx - 1])) break;
 //}
-
+min = latest.minute()
 //var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:latest.minute()})};
+return {statusCode:200,body:JSON.stringify({success:min})};
 } catch (error) {
     console.log(error);
     return {
