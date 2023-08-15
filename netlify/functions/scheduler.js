@@ -56,7 +56,7 @@ for (;nth;--nth) {
 latest = dayjs.max(assort);
 
 for (;ndx;--ndx) {
-if (latest().isSame(assort[ndx - 1])) break;
+if (dayjs(latest.format()).isSame(assort[ndx - 1])) break;
 }
 
 var fyl = tab[ndx - 1].name;
