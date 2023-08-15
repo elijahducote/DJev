@@ -51,7 +51,7 @@ await dbx.filesListFolder({path:`/SMM/Instagram/${today}`,include_deleted:false}
 });
 for (;nth;--nth) {
   //if (tab[nth - 1].tag !== "file") continue;
-  assort.push(dayjs(tab[nth - 1].server_modified));
+  assort.push(dayjs(tab[nth - 1].server_modified).tz());
 }
 latest = dayjs.max(assort);
 
