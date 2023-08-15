@@ -60,7 +60,7 @@ latest = dayjs.max(assort);
 //var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:latest})};
+return {statusCode:200,body:JSON.stringify({success:tab})};
 } catch (error) {
     return {
       statusCode: 500,
