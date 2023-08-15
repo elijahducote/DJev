@@ -62,7 +62,7 @@ if (latest.isSame(assort[ndx - 1])) break;
 var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:true,file:tab})};
+return {statusCode:200,body:JSON.stringify({success:fyl})};
 } catch (error) {
     console.log(error);
     return {
