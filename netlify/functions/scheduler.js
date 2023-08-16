@@ -1,6 +1,5 @@
 const {Dropbox} = require("dropbox"),
 dayjs = require("dayjs"),
-meta = require("instagram-private-api"),
 dbx = new Dropbox({ 
   clientId: "gm4dyloi7rntol5",
   clientSecret: process.env.APP_SECRET,
