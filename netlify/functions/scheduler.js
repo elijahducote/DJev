@@ -1,10 +1,12 @@
 const {Dropbox} = require("dropbox"),
 dayjs = require("dayjs"),
+meta = require("instagram-private-api"),
 dbx = new Dropbox({ 
   clientId: "gm4dyloi7rntol5",
   clientSecret: process.env.APP_SECRET,
   refreshToken: process.env.REFRESH_TOKEN
 }),
+{IgApiClient} = require("instagram-private-api"),
 json = require("../../instagram.json"),
 utc = require("dayjs/plugin/utc"),
 minMax = require("dayjs/plugin/minMax"),
@@ -55,7 +57,8 @@ for (;nth;--nth) {
 }
 latest = dayjs.max(assort);
 for (;ndx;--ndx) {
-if (dayjs(latest).isSame(assort[ndx - 1])) break;
+//if (dayjs(latest).isSame(assort[ndx - 1])) break;
+if (assort.indexOf(latest) + 1) break;
 }
 var fyl = tab[ndx - 1].name;
 }
