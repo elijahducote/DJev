@@ -6,7 +6,6 @@ dbx = new Dropbox({
   clientSecret: process.env.APP_SECRET,
   refreshToken: process.env.REFRESH_TOKEN
 }),
-{IgApiClient} = require("instagram-private-api"),
 json = require("../../instagram.json"),
 utc = require("dayjs/plugin/utc"),
 minMax = require("dayjs/plugin/minMax"),
