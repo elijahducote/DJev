@@ -43,7 +43,7 @@ if (hr >= relatym) kairos[1] = true;
 if (hr <= (relatym + 1)) kairos[2] = true;
 
 if (kairos[0]) {
-
+// && kairos[1] && kairos[2]
 await dbx.filesListFolder({path:`/SMM/Instagram/${today}`,include_deleted:false}).then(async (response) => {
    tab = response.result.entries;
    nth = response.result.entries.length;
@@ -58,7 +58,7 @@ for (;ndx;--ndx) {
 //if (dayjs(latest).isSame(assort[ndx - 1])) break;
 if (assort.indexOf(latest) + 1) break;
 }
-var fyl = tab[ndx - 1].name;
+//var fyl = tab[ndx - 1].name;
 }
 try {
 return {statusCode:200,body:JSON.stringify({success:ndx})};
