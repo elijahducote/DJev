@@ -34,8 +34,8 @@ today = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][dayt],
 hr = honor.hour(),
 ndx,
 assort = [],
-ids,
-latest,
+procur,
+latest = [],
 tab,
 nth;
 
@@ -54,14 +54,24 @@ for (;nth;--nth) {
   //if (tab[nth - 1].tag !== "file") continue;
   assort.push(dayjs(tab[nth - 1].server_modified).tz());
 }
-latest = dayjs.max(assort);
-for (;ndx;--ndx) {
-if (dayjs(latest).isSame(assort[ndx - 1])) break;
+//latest = dayjs.max(assort);
+//for (;ndx;--ndx) {
+//if (dayjs(latest).isSame(assort[ndx - 1])) break;
+//if (assort.indexOf(latest)) break;
+//}
+//var fyl = tab[ndx - 1].name;
+for (var cur = 3;cur;--cur) {
+latest[3 - cur] = dayjs.max(assort);
+procur = assort.indexOf(latest[3 - cur]);
+if (procur + 1) {
+ndx[3 - cur] = procur;
+assort.splice(procur, 1);
 }
-var fyl = tab[ndx - 1].name;
+}
+
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:assort.indexOf(latest)})};
+return {statusCode:200,body:JSON.stringify({success:ndx})};
 } catch (error) {
     return {
       statusCode: 500,
