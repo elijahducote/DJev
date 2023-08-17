@@ -34,6 +34,7 @@ today = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][dayt],
 hr = honor.hour(),
 ndx,
 assort = [],
+ids,
 latest,
 tab,
 nth;
