@@ -62,7 +62,7 @@ if (assort.indexOf(latest) + 1) break;
 //var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:ndx})};
+return {statusCode:200,body:JSON.stringify({success:assort.indexOf(latest)})};
 } catch (error) {
     return {
       statusCode: 500,
