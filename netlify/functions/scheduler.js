@@ -51,18 +51,16 @@ await dbx.filesListFolder({path:`/SMM/Instagram/${today}`,include_deleted:false}
 });
 for (;nth;--nth) {
   //if (tab[nth - 1].tag !== "file") continue;
-  //assort.push(dayjs(tab[nth - 1].server_modified).tz());
-  assort.push(dayjs(tab[nth - 1].server_modified).tz().toString());
+  assort.push(dayjs(tab[nth - 1].server_modified).tz());
 }
 latest = dayjs.max(assort);
 for (;ndx;--ndx) {
-//if (dayjs(latest).isSame(assort[ndx - 1])) break;
-if (assort.indexOf(latest) + 1) break;
+if (dayjs(latest).isSame(assort[ndx - 1])) break;
 }
-//var fyl = tab[ndx - 1].name;
+var fyl = tab[ndx - 1].name;
 }
 try {
-return {statusCode:200,body:JSON.stringify({success:assort.indexOf(latest)})};
+return {statusCode:200,body:JSON.stringify({success:fyl})};
 } catch (error) {
     return {
       statusCode: 500,
