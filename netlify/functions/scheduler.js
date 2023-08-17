@@ -48,7 +48,6 @@ if (kairos[0]) {
 await dbx.filesListFolder({path:`/SMM/Instagram/${today}`,include_deleted:false}).then(async (response) => {
    tab = response.result.entries;
    nth = response.result.entries.length;
-   ndx = response.result.entries.length;
 });
 for (;nth;--nth) {
   //if (tab[nth - 1].tag !== "file") continue;
