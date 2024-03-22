@@ -287,7 +287,7 @@ mnu.style.display = "none";
         </div>
         <div className="d-ev-music-container12">
           <div className="d-ev-music-container13 vignette">
-            <span className="d-ev-music-text32">5-15-23 @ 7-10P CDT</span>
+            <span className="d-ev-music-text32">3-3-24 @ 6-10P CDT</span>
             <h1 className="d-ev-music-text33">Lofi Mondaze</h1>
           </div>
         </div>
