@@ -261,7 +261,7 @@ mnu.style.display = "none";
       <div className="d-ev-music-gallery">
         <div className="d-ev-music-container06 vignette">
           <div className="d-ev-music-container07">
-            <span className="d-ev-music-text20">3-24 @ 6-10P CDT</span>
+            <span className="d-ev-music-text20">3-3-24 @ 6-10P CDT</span>
             <h1 className="d-ev-music-text21">Dan Electro’s</h1>
           </div>
         </div>
