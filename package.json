@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.0.0-alpha.0",
-    "axios": "^1.6.8",
-    "dotenv": "^16.4.5",
     "dangerous-html": "^0.1.13",
     "dayjs": "^1.11.9",
     "dropbox": "^10.34.0",
