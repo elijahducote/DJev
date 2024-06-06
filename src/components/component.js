@@ -25,7 +25,7 @@ const AppComponent = (props) => {
       </div>
       <div className="component-container4">
         <a
-          href="https://evshirts.com/"
+          href="https://evwaveshop.com/"
           target="_blank"
           rel="noreferrer noopener"
           className="component-link"
