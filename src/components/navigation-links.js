@@ -17,7 +17,7 @@ const NavigationLinks = (props) => {
         {props.text2}
       </Link>
       <a
-        href="https://evshirts.com/"
+        href="https://evwaveshop.com/"
         target="_blank"
         rel="noreferrer noopener"
         className="navigation-links-link"
