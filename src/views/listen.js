@@ -29,7 +29,7 @@ const Listen = (props) => {
               Bookings
             </Link>
             <a
-              href="https://evshirts.com/"
+              href="https://evwaveshop.com/"
               target="_blank"
               rel="noreferrer noopener"
               className="listen-link"
@@ -75,7 +75,7 @@ const Listen = (props) => {
                 </div>
                 <div className="listen-container6">
                   <a
-                    href="https://evshirts.com/"
+                    href="https://evwaveshop.com/"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="listen-link01"
