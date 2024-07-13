@@ -105,7 +105,7 @@ mnu.style.display = "none";
                 </div>
                 <div className="bookings-container6">
                   <a
-                    href="https://evshirts.com/"
+                    href="https://evwaveshop.com/"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="bookings-link01"
