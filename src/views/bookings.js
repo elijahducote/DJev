@@ -59,7 +59,7 @@ mnu.style.display = "none";
             </Link>
             <span className="bookings-text03">Bookings</span>
             <a
-              href="https://evshirts.com/"
+              href="https://evwaveshop.com/"
               target="_blank"
               rel="noreferrer noopener"
               className="bookings-link"
