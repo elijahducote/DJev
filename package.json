@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "axios": "^1.6.8",
     "@craco/craco": "^7.0.0-alpha.0",
     "dangerous-html": "^0.1.13",
     "dayjs": "^1.11.9",
