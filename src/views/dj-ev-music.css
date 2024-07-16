@@ -482,7 +482,7 @@
 .d-ev-music-container06 {
   flex: 0 0 auto;
   width: 100%;
-  height: 100%;
+  height: 24rem !important;
   display: flex;
   grid-area: a;
   transition: 0.3s;
@@ -528,7 +528,7 @@
 .d-ev-music-container08 {
   flex: 0 0 auto;
   width: 100%;
-  height: 100%;
+  height: 24rem !important;
   display: flex;
   grid-area: b;
   transition: 0.3s;
@@ -585,7 +585,7 @@
 .d-ev-music-container10 {
   flex: 0 0 auto;
   width: 100%;
-  height: 100%;
+  height: 24rem !important;
   display: flex;
   grid-area: c;
   transition: 0.3s;
@@ -643,7 +643,7 @@
 .d-ev-music-container12 {
   flex: 0 0 auto;
   width: 100%;
-  height: 100%;
+  height: 24rem !important;
   display: flex;
   grid-area: d;
   transition: 0.3s;
@@ -692,7 +692,7 @@
 .d-ev-music-container14 {
   flex: 0 0 auto;
   width: 100%;
-  height: 100%;
+  height: 24rem !important;
   display: flex;
   grid-area: e;
   transition: 0.3s;
@@ -738,7 +738,7 @@
 .d-ev-music-container16 {
   flex: 0 0 auto;
   width: 100%;
-  height: 100%;
+  height: 24rem !important;
   display: flex;
   grid-area: f;
   object-fit: contain;
