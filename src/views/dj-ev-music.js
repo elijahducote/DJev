@@ -260,48 +260,22 @@ mnu.style.display = "none";
       <div className="d-ev-music-separator2"></div>
       <div className="d-ev-music-gallery">
         <div className="d-ev-music-container06 vignette">
-          <div className="d-ev-music-container07">
-            <span className="d-ev-music-text20">3-3-24 @ 6-10P CDT</span>
-            <h1 className="d-ev-music-text21">Dan Electro’s</h1>
-          </div>
+          <div className="d-ev-music-container07"></div>
         </div>
         <div className="d-ev-music-container08">
-          <div className="d-ev-music-container09 vignette">
-            <span className="d-ev-music-text22">5-6-23 @ 11A-2P CDT</span>
-            <h1 className="d-ev-music-text23">
-              <span>HOUSTON</span>
-              <br></br>
-              <span>skateboards</span>
-            </h1>
-          </div>
+          <div className="d-ev-music-container09 vignette"></div>
         </div>
         <div className="d-ev-music-container10">
-          <div className="d-ev-music-container11 vignette">
-            <span className="d-ev-music-text27">4-21-23 @ 11A-2P CDT</span>
-            <h1 className="d-ev-music-text28">
-              <span>HOUSTON</span>
-              <br></br>
-              <span>skateboards</span>
-            </h1>
-          </div>
+          <div className="d-ev-music-container11 vignette"></div>
         </div>
         <div className="d-ev-music-container12">
-          <div className="d-ev-music-container13 vignette">
-            <span className="d-ev-music-text32">5-15-23 @ 7-10P CDT</span>
-            <h1 className="d-ev-music-text33">Lofi Mondaze</h1>
-          </div>
+          <div className="d-ev-music-container13 vignette"></div>
         </div>
         <div className="d-ev-music-container14">
-          <div className="d-ev-music-container15 vignette">
-            <span className="d-ev-music-text34">4-3-23 @ 7-10P CDT</span>
-            <h1 className="d-ev-music-text35">Lofi Mondaze</h1>
-          </div>
+          <div className="d-ev-music-container15 vignette"></div>
         </div>
         <div className="d-ev-music-container16">
-          <div className="d-ev-music-container17 vignette">
-            <span className="d-ev-music-text36">7-10P CDT</span>
-            <h1 className="d-ev-music-text37">Lofi Mondaze</h1>
-          </div>
+          <div className="d-ev-music-container17 vignette"></div>
         </div>
       </div>
     </div>
