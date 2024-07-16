@@ -492,7 +492,7 @@
   justify-content: flex-end;
   background-image: url('/external/00.webp'), url('/external/blur/00.webp'), linear-gradient(189deg, rgb(70.588% 70.588% 70.588%) 0%, rgb(70.558% 70.558% 70.558%) 6.25%, rgb(70.345% 70.345% 70.345%) 12.5%, rgb(69.766% 69.766% 69.766%) 18.75%, rgb(68.643% 68.643% 68.643%) 25%, rgb(66.798% 66.798% 66.798%) 31.25%, rgb(64.063% 64.063% 64.063%) 37.5%, rgb(60.283% 60.283% 60.283%) 43.75%, rgb(55.319% 55.319% 55.319%) 50%, rgb(50.434% 50.434% 50.434%) 56.25%, rgb(46.819% 46.819% 46.819%) 62.5%, rgb(44.259% 44.259% 44.259%) 68.75%, rgb(42.557% 42.557% 42.557%) 75%, rgb(41.531% 41.53% 41.53%) 81.25%, rgb(41.005% 41.005% 41.005%) 87.5%, rgb(40.812% 40.812% 40.812%) 93.75%, rgb(40.784% 40.784% 40.784%) 100%);
   background-origin: border-box;
-  background-position: left;
+  background-position: center center;
   background-repeat: no-repeat, repeat, no-repeat;
 }
 
@@ -537,7 +537,7 @@
   background-size: contain;
   background-image: url('/external/01.webp'), url('/external/blur/01.webp'), linear-gradient(189deg, rgb(70.588% 70.588% 70.588%) 0%, rgb(70.558% 70.558% 70.558%) 6.25%, rgb(70.345% 70.345% 70.345%) 12.5%, rgb(69.766% 69.766% 69.766%) 18.75%, rgb(68.643% 68.643% 68.643%) 25%, rgb(66.798% 66.798% 66.798%) 31.25%, rgb(64.063% 64.063% 64.063%) 37.5%, rgb(60.283% 60.283% 60.283%) 43.75%, rgb(55.319% 55.319% 55.319%) 50%, rgb(50.434% 50.434% 50.434%) 56.25%, rgb(46.819% 46.819% 46.819%) 62.5%, rgb(44.259% 44.259% 44.259%) 68.75%, rgb(42.557% 42.557% 42.557%) 75%, rgb(41.531% 41.53% 41.53%) 81.25%, rgb(41.005% 41.005% 41.005%) 87.5%, rgb(40.812% 40.812% 40.812%) 93.75%, rgb(40.784% 40.784% 40.784%) 100%);
   background-origin: border-box;
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat, repeat, no-repeat;
 }
 
@@ -594,7 +594,7 @@
   background-size: contain;
   background-image: url('/external/02.webp'), url('/external/blur/02.webp'), linear-gradient(189deg, rgb(70.588% 70.588% 70.588%) 0%, rgb(70.558% 70.558% 70.558%) 6.25%, rgb(70.345% 70.345% 70.345%) 12.5%, rgb(69.766% 69.766% 69.766%) 18.75%, rgb(68.643% 68.643% 68.643%) 25%, rgb(66.798% 66.798% 66.798%) 31.25%, rgb(64.063% 64.063% 64.063%) 37.5%, rgb(60.283% 60.283% 60.283%) 43.75%, rgb(55.319% 55.319% 55.319%) 50%, rgb(50.434% 50.434% 50.434%) 56.25%, rgb(46.819% 46.819% 46.819%) 62.5%, rgb(44.259% 44.259% 44.259%) 68.75%, rgb(42.557% 42.557% 42.557%) 75%, rgb(41.531% 41.53% 41.53%) 81.25%, rgb(41.005% 41.005% 41.005%) 87.5%, rgb(40.812% 40.812% 40.812%) 93.75%, rgb(40.784% 40.784% 40.784%) 100%);
   background-origin: border-box;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat, repeat, no-repeat;
 }
 
@@ -702,7 +702,7 @@
   background-image: url('/external/04.webp'), url('/external/blur/04.webp');
   background-repeat: no-repeat, repeat;
   background-origin: border-box;
-  background-position: center left;
+  background-position: center center;
 }
 
 .d-ev-music-container14:hover {
@@ -748,7 +748,7 @@
   background-size: contain;
   background-image: url('/external/05.webp'), url('/external/blur/05.webp');
   background-origin: border-box;
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat, repeat;
 }
 
