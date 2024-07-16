@@ -653,7 +653,7 @@
   background-image: url('/external/03.webp'), url('/external/blur/03.webp');
   background-origin: border-box;
   background-position: center center;
-  baclground-repeat: no-repeat, repeat;
+  background-repeat: no-repeat, repeat;
 }
 
 .d-ev-music-container12:hover {
@@ -700,6 +700,7 @@
   flex-direction: column;
   background-size: contain;
   background-image: url('/external/04.webp'), url('/external/blur/04.webp');
+  background-repeat: no-repeat, repeat;
   background-origin: border-box;
   background-position: center left;
 }
