@@ -1,4 +1,8 @@
-run = "cowsay Configure me!"
+run = "npm run start"
+modules = ["web", "nodejs-16", "nix"]
 
 [nix]
-channel = "stable-22_11"
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npm run start"]
