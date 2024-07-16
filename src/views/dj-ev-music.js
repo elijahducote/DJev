@@ -279,9 +279,9 @@ mnu.style.display = "none";
           <div className="d-ev-music-container11 vignette">
             <span className="d-ev-music-text27"></span>
             <h1 className="d-ev-music-text28">
-              <span>/span>
+              <span></span>
               <br></br>
-              <span>/span>
+              <span></span>
             </h1>
           </div>
         </div>
