@@ -34,7 +34,7 @@ export function Home() {
     htm(undefined,
       "img",
       {
-        src: "https://djev.org/external/djcover.jpg",
+        src: "./CDN/djcover.jpg",
         class: "home-poster"
       }
     ),
