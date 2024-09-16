@@ -1,0 +1,26 @@
+import {htm} from "./utility";
+
+import { RoundCarousel, RoundCarouselItem } from "round-carousel-component";
+
+const node = htm(undefined,"div",{id:"carousel"});
+
+// Create an array of Carousel Items
+const items = Array(5)
+	.fill('')
+	.map((_, index) => ({
+		alt: 'A random Unsplash photo',
+		image: `https://cdn.jsdelivr.net/gh/elijahducote/DJEv@main/img/${index}.jpg`,
+		content: `<div><strong>Round Carousel</strong><span>Slide number ${index + 1}</span></div>`
+}));
+
+new RoundCarousel(node, {
+  items,
+  itemWidth:480,
+  showControls: true,
+  nextButtonContent: "",
+  prevButtonContent: ""
+});
+
+export function Events() {
+  return node;
+}

@@ -1,0 +1,16 @@
+[build]
+  publish = "client/source"
+
+[functions]
+  directory = "server/endpoint"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/client/source/*"
+  to = "/CDN/:splat"
+  status = 200
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
