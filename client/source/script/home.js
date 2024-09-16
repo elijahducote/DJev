@@ -34,7 +34,7 @@ export function Home() {
     htm(undefined,
       "img",
       {
-        src: "./CDN/djcover.jpg",
+        src: "./CDN/img/djcover.jpg",
         class: "home-poster"
       }
     ),
