@@ -6,8 +6,8 @@
   node_bundler = "esbuild"
 
 [[redirects]]
-  from = "/*"
-  to = "/CDN/:splat"
+  from = "/CDN/:splat"
+  to = "/*"
   status = 200
   
 #[[redirects]]
