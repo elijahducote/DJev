@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "build": "esbuild ./client/source/script/index.js --keep-names --drop:debugger --pure:console.log --tree-shaking=true --legal-comments=none --charset=utf8 --format=iife --bundle --platform=browser --minify --target=chrome120,firefox120,edge120,safari16,opera103 --outfile=./client/source/js/index.js && esbuild ./client/source/ravel.css --loader:.css=css --tree-shaking=true --legal-comments=none --charset=utf8 --bundle --platform=browser --minify --target=chrome120,firefox120,edge120,safari16,opera103 --outfile=./client/source/css/ravel.css"
+    "build": "esbuild ./client/source/script/index.js --keep-names --drop:debugger --pure:console.log --tree-shaking=true --legal-comments=none --charset=utf8 --format=iife --bundle --platform=browser --minify --target=chrome120,firefox120,edge120,safari16,opera103 --outfile=./client/source/js/index.js && esbuild ./client/source/ravel.css --loader:.css=css --loader:.ttf=file --tree-shaking=true --legal-comments=none --charset=utf8 --bundle --platform=browser --minify --target=chrome120,firefox120,edge120,safari16,opera103 --outfile=./client/source/css/ravel.css"
   },
   "dependencies": {
     "axios": "^1.7.2",
