@@ -5,7 +5,6 @@ import {htm,Dbounce,throttle,sleep} from "./utility.js";
 
 var itR8R = 0,
 isScrolling,
-scrollStarted = false,
 isCancelled = false;
 
 function Menu(dropdown) {
@@ -18,11 +17,23 @@ function Menu(dropdown) {
     },{once:true});
     dropdown.style.opacity = "0";
   },3000));
+  exit.addEventListener("click", throttle(function () {
+    dropdown.addEventListener("transitionend",function(){
+      Object.assign(dropdown.style, {display:"none",visibility:"hidden",opacity:"0"});
+    },{once:true});
+    dropdown.style.opacity = "0";
+  },3000));
   van.add(contents,exit);
   return list(contents,reactive(["ome", "J EVents", "ooking","laylists"]),function (v) {
     let offset = ".75em";
     if (!itR8R) offset = "0";
-    let section = htm([htm("","img",{class:"letter-icon",src:`./CDN/img/svg/${iconname[itR8R]}.svg`}),v],"h2",{style:`margin: ${offset} 0 0`});
+    let path = ["home","events","booking","playlists"][itR8R],
+    section = htm([htm("","img",{class:"letter-icon",src:`./CDN/img/svg/${iconname[itR8R]}.svg`}),v],"h2",{"data-link":path, style:`margin: ${offset} 0 0; user-select: none;`});
+    section.addEventListener("click", function() {
+      const clickEvent = new Event("click");
+      exit.dispatchEvent(clickEvent);
+      window.router.goto(this.dataset.link);
+    });
     ++itR8R;
     //van.add(wrapper[5],htm([htm("test","span"),v],"h2"));
     van.add(contents,htm(undefined,"br"));
@@ -59,20 +70,32 @@ export function Header(item) {
   icon.children[0].setAttributeNS(null,"pointer-events","none");
   icon.children[1].setAttributeNS(null,"pointer-events","none");
 
-  async function hideNSeek(hasStarted) {
-    if (!scrollStarted) scrollStarted = true;
-    if (!hasStarted) scrollStarted = false;
+  /*async function hideNSeek() {
     let i = 3,
-    alpha;
-    for (;i;--i) {
+    alpha = socials[0].parentElement.style.opacity,
+    tym = ((Math.random() * 3) | 0) || 0;
+    
+    if (alpha.charCodeAt(0) === 48) {
+     await sleep(tym*500); 
+      socials[0].parentElement.style.opacity = "1";
+      socials[1].parentElement.style.opacity = "1";
+      document.getElementsByClassName("social-linktree")[0].style.opacity = "1";
+    }
+    else {
+      await sleep(tym*500);
+      socials[0].parentElement.style.opacity = "0";
+      socials[1].parentElement.style.opacity = "0";
+      document.getElementsByClassName("social-linktree")[0].style.opacity = "0";
+    }*/
+    /*for (;i;--i) {
       let tym = ((Math.random() * 3) | 0) || 0;
       await sleep(tym*500);
-      alpha = socials[3 - i].parentElement.style.opacity;
-      if (alpha.charCodeAt(0) === 48) socials[3 - i].parentElement.style.opacity = "1";
-      else socials[3 - i].parentElement.style.opacity = "0";
+      alpha = socials[3 - i].parentElement.parentElement.style.opacity;
+      if (alpha.charCodeAt(0) === 48) socials[3 - i].parentElement.parentElement.style.opacity = "1";
+      else socials[3 - i].parentElement.parentElement.style.opacity = "0";
       ;
     }
-  }
+  }*/
   
   async function collapser() {
     if (isCancelled) {
@@ -88,11 +111,15 @@ export function Header(item) {
   let i,
   nth;
   
-  window.addEventListener("touchmove", Dbounce(() => {
-    hideNSeek(true);
+  /*window.addEventListener("touchmove", Dbounce(() => {
+    hideNSeek();
     clearTimeout(isScrolling);
     isScrolling = setTimeout(hideNSeek, 80);
-  }, 800), false);
+    window.addEventListener("touchend", throttle(() => {
+      setTimeout(hideNSeek,4000);
+    }, 800), {once:true});
+  }, 800), false);*/
+ 
   drawer.addEventListener("touchend", throttle(() => {
     console.log("Enteredd","\n");
     this.addEventListener("transitionend",collapser,{once:true});
@@ -115,10 +142,12 @@ export function Header(item) {
     nth = 3 - i;
     van.add(item[nth + 1],htm(socials[nth],"main",{class:`newmedia social-${entity[nth]}`,"data-index":nth}));
     document.getElementById(entity[nth]).addEventListener("touchend",interaction);
+    document.getElementById(entity[nth]).addEventListener("click",interaction);
   }
   item[3].innerHTML += "";
   document.getElementById("linktree").addEventListener("touchend",interaction);
-  
+  document.getElementById("linktree").addEventListener("click",interaction);
+
   van.add(item[4],htm("","img",{src:"./CDN/img/PREVIEW_SUNDOWN.png",class:"d-ev-music-image blurry-load","data-large":"./CDN/img/Sunset.png"}));
   Menu(menutab);
   return img;

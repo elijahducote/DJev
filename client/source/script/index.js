@@ -1,5 +1,5 @@
 import van from "vanjs-core";
-import {Route, now} from "vanjs-router";
+import {Route, now} from "./vanjs-router";
 import {Loader} from "vanjs-feather";
 import {htm} from "./utility";
 import {Header} from "./header";
@@ -14,21 +14,37 @@ app = wrapper[0],
 siteHeader = Header(wrapper),
 blurryLoader = new BlurryImageLoad();
 
+var lastVisited = now.oldVal.split("/",2).join("");
+
 function WebApp(page,args) {
-  const loading = Loader({class:"icon spinner"});
   return Route({
       rule: page.name.toLowerCase(),
       Loader: page,
       onLoad: function () {
-        const elm = this.element.parentElement;
+        const loading = Loader({class:"icon spinner"}),
+        elm = this.element.parentElement;
+        loading.style.animationPlayState = "running";
+        van.add(siteHeader.parentElement,htm(loading,"main"));
+        
+        
         loading.addEventListener("animationiteration",function () {
           siteHeader.style.opacity = "0.5";
           loading.style.animationPlayState = "paused";
           loading.classList.remove("spinner");
           loading.classList.add("fadeAway");
           loading.style.animationPlayState = "running";
-          Object.assign(elm.style, {display:"initial",visibility:"visible"});
+          const cur = now.rawVal.split("/",2).join("");
+        //window.alert(lastVisited);
+        //window.alert(cur);
+        if (cur !== lastVisited) {
+          document.getElementById(lastVisited).style.opacity = "0";
+          document.getElementById(lastVisited).addEventListener("transitionend", function () {
+            Object.assign(this.style,{display:"none",visibility:"hidden"});
+          });
+        }
+        lastVisited = cur;
           loading.addEventListener("animationend", function () {
+            Object.assign(elm.style, {display:"initial",visibility:"visible",opacity:"0"});
             loading.style.animationPlayState = "paused";
             loading.parentElement.remove();
             elm.style.opacity = "1.0";
@@ -39,32 +55,28 @@ function WebApp(page,args) {
           },{once:true});
           blurryLoader.load();
         },{once:true});
-        this.show();
+        //this.show();
       },
       onFirst: function () {
+        //this.hide();
         /* document.addEventListener("DOMContentLoaded", function () {
           van.add(siteHeader.parentElement,htm(loading,"main"));
           loading.style.animationPlayState = "running";
         },{once:true}); */
 
-        let prev = now.oldVal.split("/",2),
-        cur = now.rawVal.split("/",2);
-      
-        console.log(prev,cur);
-      
-        if (prev[prev.length - 1] !== cur[cur.length - 1]) {
-          document.getElementById(prev[prev.length - 1]).style.opacity = "0";
-          document.getElementById(prev[prev.length - 1]).addEventListener("transitionend", function () {
-            Object.assign(document.getElementById(prev[prev.length - 1]).style,{display:"none",visibility:"hidden",opacity:"0"});
+        /*let prev = now.oldVal.split("/",2).join(""),
+        cur = now.rawVal.split("/",2).join("");
+        
+        if (prev !== cur) {
+          document.getElementById(prev).style.opacity = "0";
+          document.getElementById(prev).addEventListener("transitionend", function () {
+            Object.assign(this.style,{display:"none",visibility:"hidden"});
           });
-        }
+        }*/
 
 
-        //let prevSector = now.oldVal;
-        //if (prevSector.charCodeAt(0) === 47) prevSector = prevSector.substring(1);
-        //Object.assign(document.getElementById(prevSector).style,{display:"none",visibility:"hidden"});
-        van.add(siteHeader.parentElement,htm(loading,"main"));
-        loading.style.animationPlayState = "running";
+        //van.add(siteHeader.parentElement,htm(loading,"main"));
+        //document.getElementsByClassName("spinner")[0].style.animationPlayState = "running";
       }
   });
 }
@@ -79,7 +91,3 @@ van.add(document.getElementById("home"), landing);
 van.add(document.getElementById("events"), shows);
 van.add(document.getElementById("booking"), contact);
 van.add(document.getElementById("playlists"), listen);
-
-/* setTimeout(() => {
-  goto("booking");
-},6000); */

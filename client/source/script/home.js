@@ -1,5 +1,5 @@
 import {htm} from "./utility";
-import {goto} from "vanjs-router";
+import {goto} from "./vanjs-router";
 
 export function Home() {
   const cta = htm(htm("Book Us","span",{class:"button-text"}),

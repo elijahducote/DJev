@@ -8,9 +8,10 @@ const node = htm(undefined,"div",{id:"carousel"});
 const items = Array(5)
 	.fill('')
 	.map((_, index) => ({
-		alt: 'A random Unsplash photo',
+		alt: "",
 		image: `https://cdn.jsdelivr.net/gh/elijahducote/DJEv@main/img/${index}.jpg`,
-		content: `<div><strong>Round Carousel</strong><span>Slide number ${index + 1}</span></div>`
+		content:""
+    //content: `<div><strong>Round Carousel</strong><span>Slide number ${index + 1}</span></div>`
 }));
 
 new RoundCarousel(node, {

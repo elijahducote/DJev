@@ -1,6 +1,7 @@
+@import "./blurry-load.css";
+@import "./fonts.css";
 @import "./index.css";
 @import "./components/Home/style.css";
-@import "./components/Booking/style.css";
 @import "./components/Button/style.css";
 @import "./components/Carousel/style.css";
-@import "./blurry-load.css";
+@import "./components/Booking/style.css";

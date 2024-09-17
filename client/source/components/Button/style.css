@@ -1,7 +1,7 @@
 .button-text {
   box-sizing: border-box;
   transform: none;
-  font-size: 1em;
+  font-size: 1.25em;
   letter-spacing: 0.042em;
   text-align: center;
   color: rgb(0, 0, 0);
@@ -10,7 +10,6 @@
   text-decoration-thickness: auto;
   font-weight: 400;
   line-height: 1.5em;
-  font-family: Helvetica, sans-serif;
   background-color: rgb(255, 255, 255);
 }
 .button {
@@ -30,7 +29,6 @@
   transform: none;
   letter-spacing: normal;
   line-height: 1em;
-  font-family: Helvetica, sans-serif;
   font-size: 0.667em;
   border: 0.267em solid rgb(255, 255, 255);
   transition: transform 1.28s ease-in-out;
