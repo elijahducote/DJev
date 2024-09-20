@@ -39,7 +39,7 @@ function WebApp(page,args) {
         if (cur !== lastVisited) {
           document.getElementById(lastVisited).style.opacity = "0";
           document.getElementById(lastVisited).addEventListener("transitionend", function () {
-            if (parseFloat(this.style.opacity) < 0) return;
+            if (parseFloat(this.style.opacity) > 0) return;
             Object.assign(this.style,{display:"none",visibility:"hidden"});
           });
         }
