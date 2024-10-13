@@ -5,16 +5,11 @@
   },
   "dependencies": {
     "axios": "^1.7.2",
-    "dotenv": "^16.4.5",
     "round-carousel-component": "^1.2.1",
     "vanjs-core": "^1.5.1",
     "vanjs-ext": "^0.6.0",
     "vanjs-feather": "^0.0.5",
     "vanjs-router": "^2.0.6",
     "esbuild": "^0.23.0"
-  },
-  "devDependencies": {
-    "express": "^4.19.2",
-    "gradient2svg": "^0.0.4"
   }
 }
