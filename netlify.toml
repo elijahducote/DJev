@@ -16,6 +16,6 @@
   status = 200
   
 [[redirects]]
-  from = "/request/*"
-  to = "/server/endpoint/:splat"
+  from = "/*"
+  to = "/.netlify/functions/:splat"
   status = 200
