@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
   let ndx = 0,
   respcode = 400,
   usrname = "Anonymous",
-  contents,
+  contents = "<div class=wrapper><h2 style=color:#FF0000>Failed.</h2></div><br><br><br><div class=wrapper><p>Oops. Gone awry!</p></div>",
   email,
   msg;
   
