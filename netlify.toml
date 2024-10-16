@@ -2,7 +2,7 @@
   publish = "client/source"
 
 [[redirects]]
-  from = "/*"
+  from = "/go/*"
   to = "/.netlify/functions/:splat"
   status = 200
 
