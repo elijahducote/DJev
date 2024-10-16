@@ -16,6 +16,6 @@
   status = 200
   
 [[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/:splat"
+  from = "/.netlify/functions/*"
+  to = "/:splat"
   status = 200
