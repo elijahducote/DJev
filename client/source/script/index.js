@@ -1,5 +1,5 @@
 import van from "vanjs-core";
-import {Route, now} from "./vanjs-router";
+import {Route, now,goto} from "./vanjs-router";
 import {Loader} from "vanjs-feather";
 import {htm} from "./utility";
 import {Header} from "./header";
@@ -86,9 +86,24 @@ const landing = WebApp.bind(this,Home),
 shows = WebApp.bind(this,Events),
 contact = WebApp.bind(this,Booking),
 listen = WebApp.bind(this,Playlists);
-
 van.add(app,siteHeader);
 van.add(document.getElementById("home"), landing);
 van.add(document.getElementById("events"), shows);
 van.add(document.getElementById("booking"), contact);
 van.add(document.getElementById("playlists"), listen);
+
+
+
+/*document.getElementsByClassName("booking-form")[0].addEventListener("verified", (e) => {
+    window.rqid = e.token;
+    this.lastElementChild.disabled = false;
+    window.alert(window.rqid);
+  });
+  document.getElementsByClassName("booking-form")[0].addEventListener("error", (e) => {
+    window.rqid = false;
+    window.alert(window.rqid);
+  });
+  document.getElementsByClassName("booking-form")[0].addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (window.rqid) this.submit();
+});*/

@@ -56,12 +56,18 @@ font-family:120rem !important;
 div.container {
 font-size:20rem !important;
 }
+#captcha {
+transform:scale(1.25);
+}
 }
 
 /* Small */
 @media screen and (max-height:942px) and (min-width:555.1875px) {
 div.container {
 font-size:20rem !important;
+}
+#captcha {
+transform:scale(1.25);
 }
 }
 
@@ -70,12 +76,18 @@ font-size:20rem !important;
 div.container {
 font-size:30rem !important;
 }
+#captcha {
+transform:scale(1.5);
+}
 }
 
 /* Large */
 @media screen and (min-height:805.25px) and (min-width:992px) {
 div.container {
 font-size:30rem !important;
+}
+#captcha {
+transform:scale(1.5);
 }
 }
 
@@ -84,12 +96,18 @@ font-size:30rem !important;
 div.container {
 font-size:40rem !important;
 }
+#captcha {
+transform:scale(1.75);
+}
 }
 
 /* Extra Extra Large */
 @media screen and (min-width:1930px) and (min-height:1113.75px) {
 div.container {
 font-size:60rem !important;
+}
+#captcha {
+transform:scale(2);
 }
 }
 
@@ -308,4 +326,17 @@ div#events {
   100% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), .25em .5em 3.5em rgba(255,255,255,0.7);
   }
+}
+#captcha {
+width:100%;
+transform-origin:center;
+padding-top:1em;
+padding-bottom:1em;
+}
+.booking-submit {
+  opacity:1;
+  transition: opacity 1.28s ease-in-out;
+}
+.booking-submit:disabled {
+  opacity:.5;
 }

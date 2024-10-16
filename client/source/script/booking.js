@@ -1,7 +1,9 @@
 import {htm} from "./utility";
+import "@hcaptcha/vanilla-hcaptcha";
 
 export function Booking() {
-  return htm([
+  const captcha = htm(undefined,"h-captcha",{"auto-render":"true","id":"captcha","site-key":"e2480948-c1cc-4f46-ac56-81ea236a50c8","size":"compact","tabindex":"0"}), 
+  form = htm([
     htm("Your Email",
       "label",
       {
@@ -46,18 +48,17 @@ export function Booking() {
           class: "booking-message-text",
         }
     ),
-
-    htm(undefined,
-        "br"
-    ),
+    
+    captcha,
 
     htm(htm("SUBMIT","span"),
         "button",
         {
           type:"submit",
-          class:"booking-submit"
+          class:"booking-submit",
+          disabled:true
         }
-    )
+   )
     
   ],
     "form",
@@ -68,4 +69,18 @@ export function Booking() {
     }
 
   );
+  
+  captcha.addEventListener("verified", (e) => {
+    window.rqid = e.token;
+    document.getElementsByClassName("booking-submit")[0].disabled = false;
+  });
+  captcha.addEventListener("error", (e) => {
+    window.rqid = false;
+    document.getElementsByClassName("booking-submit")[0].disabled = true;
+  });
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (window.rqid) this.submit();
+  });
+  return form;
 }
