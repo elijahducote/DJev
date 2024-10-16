@@ -16,6 +16,6 @@
   status = 200
   
 [[redirects]]
-  from = "/*"
+  from = "/endpoint/*"
   to = "/server/endpoint/:splat"
   status = 200
