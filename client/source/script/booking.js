@@ -8,7 +8,7 @@ export function Booking() {
     htm("Your Email",
     "label",
     {
-      for: "email",
+      for: "mailbox",
       class: "home-heading"
     }
     ),
@@ -17,8 +17,8 @@ export function Booking() {
     "input",
     {
       type: "email",
-      name: "email",
-      required: "",
+      name: "mailbox",
+      required: true,
       minlength: "10",
       placeholder: "Username@Website.Ext",
       class: "booking-email-input",
@@ -40,9 +40,8 @@ export function Booking() {
     htm(undefined,
     "textarea",
     {
-      type: "email",
       name: "message",
-      required: "",
+      required: true,
       minlength: "14",
       maxlength: "2000",
       placeholder: "Say something!",
