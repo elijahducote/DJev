@@ -340,3 +340,13 @@ padding-bottom:1em;
 .booking-submit:disabled {
   opacity:.5;
 }
+#enroll {
+  width:100%;
+  transform:scale(2);
+  margin-top:1em;
+}
+.mailerlite {
+  text-align: center;
+  width:100%;
+  margin-top:0.5em;
+}
