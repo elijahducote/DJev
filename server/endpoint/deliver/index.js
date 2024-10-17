@@ -10,6 +10,7 @@ exports.handler = async function (event, context) {
   usrname = "Anonymous",
   contents = "<div class=wrapper><h2 style=color:#FF0000>Failed.</h2></div><br><br><br><div class=wrapper><p>Oops. Gone awry!</p></div>",
   email,
+  token,
   msg;
   
   try {
@@ -17,6 +18,8 @@ exports.handler = async function (event, context) {
     if ("mailbox" in queryStringParameters) email = queryStringParameters.mailbox;
     if ("message" in body) msg = body.message;
     if ("message" in queryStringParameters) msg = queryStringParameters.message;
+    if ("token" in body) token = body.token;
+    if ("token" in queryStringParameters) token = queryStringParameters.token;
     if (email) usrname = email.split("@",1)[0];
     
     let errout = "Oops. Gone awry!",
@@ -26,7 +29,20 @@ exports.handler = async function (event, context) {
       usrname = String.fromCharCode(firstchar - 32) + usrname.slice(1);
     }
     
-    const resend = axios.create({
+    const params = new URLSearchParams();
+    params.append("response",token);
+    params.append("secret",process.env.HCAPTCHA_SECRET);
+
+    const hcaptcha = axios.create({
+      baseURL: "https://api.hcaptcha.com",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
+    }),
+    {status: statum} = await hcaptcha.post("/siteverify",params).catch((err) => {
+      errout += `\n${err}`;
+    }),
+    resend = axios.create({
       baseURL: "https://api.resend.com",
       headers: {
         "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
@@ -35,7 +51,7 @@ exports.handler = async function (event, context) {
     }),
     {status} = await resend.post("/emails", {
       from: "Evwave Music <booking@djev.org>",
-      to: ["@gmail.com"],
+      to: ["ducote.help@gmail.com"],
       subject: `Incoming Message from ${usrname}`,
       html: `<style>:root{font-size:1px}body,html{line-height:1.5em;background:#000;font-size:35rem;font-family:Helvetica}.container{padding:0;min-width:auto;margin:0 -50% 0 -50%;width:100%;max-height:100vh;max-width:100vw;display:block;position:absolute;inset:0 50% 0 50%;box-sizing:content-box;background:#000}@media (min-height:626px) and (min-width:365px){.container{font-size:20rem}}@media (min-height:912px) and (min-width:540px){.container{font-size:40rem}.container{font-size:60rem}}@media (min-width:992px) and (min-height:654px){.container{font-size:100rem}}@media (min-width:1363px) and (min-height:559px){.container{font-size:120rem}}@media (min-width:1932px) and (min-height:1121px){.container{font-size:150rem}}.wrapper{overflow-wrap:break-word;word-wrap: break-word;word-break:break-word;hyphens:auto;font-weight:800;line-height:1.5em;letter-spacing:.075em;right:100%;margin:50% 0 0 0;color:#fff;left:0;width:100%;padding:0;position:absolute;box-sizing:border-box;display:flex;text-align:center;justify-content:center;align-content:center;object-position:center;align-items:center}svg{width:5em}h2{bottom:0.75em;position:relative}</style><div class=container><div class=wrapper style="margin:0 auto"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 330 330"><path fill="#00AAFF" d="m246 192-34 35-9-10a15 15 0 1 0-22 22l20 20a15 15 0 0 0 22 0l45-45a15 15 0 1 0-22-22zm4-192H20l40 30 75 56z"/><path fill="#00AAFF" d="M270 130V23l-30 22-96 72-9 3-9-3L0 23v172c0 8 7 15 15 15h106a105 105 0 0 0 104 120 105 105 0 0 0 45-200zm-45 170a75 75 0 1 1 0-150 75 75 0 0 1 0 150z"/></svg></div><div class=wrapper><h2 style=color:#00AAFF>New Message</h2></div><br/><div class=wrapper><p>${msg}</p></div></div>`,
       headers: {
@@ -46,6 +62,8 @@ exports.handler = async function (event, context) {
     });
     
     respcode = status;
+    
+    if (statum !== 200) throw new Error(errout);
     if (status === 200) {
       ndx = 1;
       contents = "<div class=wrapper><h2 style=color:#00FF00>Success.</h2></div><br><br><br><div class=wrapper><p>Delivered message.</p></div>";
