@@ -89,7 +89,7 @@ export function Booking() {
         if (elm.checked) {
           let data = new FormData(e.target),
           vals = Object.fromEntries(data);
-          await axios.post("/subscribe",{mailbox:vals.mailbox});
+          await axios.post("/go/subscribe",{mailbox:vals.mailbox});
         }
         const verified = document.createElement("input");
         verified.type = "hidden";
