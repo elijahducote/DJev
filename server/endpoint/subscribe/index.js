@@ -13,7 +13,7 @@ exports.handler = async function (event, context) {
   email;
   
   try {
-    email = body.mailbox;
+    if ("mailbox" in body) email = body.mailbox;
     if ("mailbox" in queryStringParameters) email = queryStringParameters.mailbox;
     
     let errout = "Oops. Gone awry!",
@@ -29,12 +29,12 @@ exports.handler = async function (event, context) {
       headers: {
         "Authorization": `Bearer ${process.env.MAILERLITE_TOKEN}`,
         "Content-Type": "application/json",
-        "Accept": "application/json",
+        "Accept": "application/json,",
         "X-Version": "2038-01-19"
       }
     }),
     {status} = await mailerlite.post("/subscribers", {
-        email
+        email: email
       }).catch((err) => {
       errout += `\n${err}`;
     });
