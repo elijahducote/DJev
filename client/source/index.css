@@ -5,6 +5,7 @@ body, html {
   font-size: 20rem;
   color: #fff;
   scroll-behavior: smooth;
+  font-family: "Brisa Sans", Helvetica, Arial, sans-serif;
 }
 div.container {
   padding: 0;
