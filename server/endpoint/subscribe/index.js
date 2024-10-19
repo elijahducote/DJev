@@ -15,12 +15,12 @@ exports.handler = async function (event, context) {
   
   try {
     email = body.mailbox;
+    usrname = email.split("@",1)[0];
     
     let errout = "Oops. Gone awry!",
     firstchar = usrname.charCodeAt(0);
 
     if (firstchar > 96 && firstchar < 123) {
-      usrname = email.split("@",1)[0];
       usrname = String.fromCharCode(firstchar - 32) + usrname.slice(1);
     }
     
