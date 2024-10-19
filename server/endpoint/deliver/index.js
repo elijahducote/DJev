@@ -19,7 +19,7 @@ exports.handler = async function (event, context) {
     const params = Object.fromEntries(queryStringParameters);
     email = params.mailbox;
     msg = params.message;
-    token = params.token;
+    token = params.response;
     usrname = email.split("@",1)[0];
     
     let errout = "Oops. Gone awry!",
@@ -48,12 +48,12 @@ exports.handler = async function (event, context) {
     queryStringParameters.append("secret",process.env.HCAPTCHA_SECRET);
     
     await hcaptcha.post("/siteverify", queryStringParameters).then((resp) => {
-      statum = resp.status;
+      statum = resp.data.success;
     }).catch((err) => {
       errout += `\n${err}`;
     });
     
-    if (statum !== 200) throw new Error(errout);
+    if (!statum) throw new Error(errout);
     
     await resend.post("/emails", {
       from: "Evwave Music <booking@djev.org>",

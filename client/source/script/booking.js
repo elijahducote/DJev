@@ -95,7 +95,7 @@ export function Booking() {
         }
         const verified = document.createElement("input");
         verified.type = "hidden";
-        verified.name = "token";
+        verified.name = "response";
         verified.value = window.rqid;
         e.target.appendChild(verified);
         e.target.submit();
