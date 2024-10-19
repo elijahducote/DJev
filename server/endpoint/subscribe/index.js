@@ -29,7 +29,7 @@ exports.handler = async function (event, context) {
       headers: {
         "Authorization": `Bearer ${process.env.MAILERLITE_TOKEN}`,
         "Content-Type": "application/json",
-        "Accept": "application/json,",
+        "Accept": "application/json",
         "X-Version": "2038-01-19"
       }
     });
