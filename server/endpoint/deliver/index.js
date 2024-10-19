@@ -15,6 +15,14 @@ exports.handler = async function (event, context) {
   status,
   statum;
   
+  if (queryStringParameters) return {
+      statusCode:200,
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      body: JSON.stringify(queryStringParameters)
+  };
+  
   try {
     email = queryStringParameters.mailbox;
     msg = queryStringParameters.message;
