@@ -15,12 +15,12 @@ exports.handler = async function (event, context) {
   status,
   statum;
   
-  if (queryStringParameters) return {
+  if (event.body) return {
       statusCode:200,
       headers: {
         "Content-Type": "text/plain"
       },
-      body: JSON.stringify(queryStringParameters)
+      body: event.body
   };
   
   try {
