@@ -1,7 +1,7 @@
 import axios from "axios";
 
 exports.handler = async function (event, context) {
-  const {queryStringParameters} = event,
+  const queryStringParameters = event.queryStringParameters,
   nametag = ["Try again","Success"],
   svg = ["<svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\" viewBox=\"0 0 330 330\"><path fill=\"#FF0000\" d=\"M257 193c-6-6-16-6-21 0l-11 11-11-11a15 15 0 0 0-21 21l11 11-11 11a15 15 0 1 0 21 21l11-11 11 11a15 15 0 0 0 21 0c6-6 6-16 0-21l-11-11 11-11c6-5 6-15 0-21zM250 0H20l40 30 75 56z\"/><path fill=\"#FF0000\" d=\"M270 130V23l-30 22-96 72-9 3-9-3L0 23v172c0 8 7 15 15 15h106a105 105 0 0 0 104 120 105 105 0 0 0 45-200zm-45 170a75 75 0 1 1 0-150 75 75 0 0 1 0 150z\"/></svg>","<svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\" viewBox=\"0 0 330 330\"><path fill=\"#00FF00\" d=\"M255 210h-15v-15a15 15 0 0 0-30 0v15h-15a15 15 0 0 0 0 30h15v15a15 15 0 0 0 30 0v-15h15a15 15 0 0 0 0-30zM250 0H20l40 30 75 56z\"/><path fill=\"#00FF00\" d=\"M270 130V23l-30 22-96 72-9 3-9-3L0 23v172c0 8 7 15 15 15h106a105 105 0 0 0 104 120 105 105 0 0 0 45-200zm-45 170a75 75 0 1 1 0-150 75 75 0 0 1 0 150z\"/></svg>"];
   
@@ -11,13 +11,15 @@ exports.handler = async function (event, context) {
   contents = "<div class=wrapper><h2 style=color:#FF0000>Failed.</h2></div><br><br><br><div class=wrapper><p>Oops. Gone awry!</p></div>",
   email,
   token,
-  msg;
+  msg,
+  status,
+  statum;
   
   try {
     email = queryStringParameters.mailbox;
     msg = queryStringParameters.message;
     token = queryStringParameters.token;
-    if (email) usrname = email.split("@",1)[0];
+    usrname = email.split("@",1)[0];
     
     let errout = "Oops. Gone awry!",
     firstchar = usrname.charCodeAt(0);
@@ -26,18 +28,13 @@ exports.handler = async function (event, context) {
       usrname = String.fromCharCode(firstchar - 32) + usrname.slice(1);
     }
     
-    const params = new URLSearchParams();
-    params.append("response",token);
-    params.append("secret",process.env.HCAPTCHA_SECRET);
-
-    const hcaptcha = axios.create({
+    
+    const params = new URLSearchParams(),
+    hcaptcha = axios.create({
       baseURL: "https://api.hcaptcha.com",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       }
-    }),
-    {status: statum} = await hcaptcha.post("/siteverify",params).catch((err) => {
-      errout += `\n${err}`;
     }),
     resend = axios.create({
       baseURL: "https://api.resend.com",
@@ -45,8 +42,20 @@ exports.handler = async function (event, context) {
         "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
         "Content-Type": "application/json"
       }
-    }),
-    {status} = await resend.post("/emails", {
+    });
+    
+    params.append("response",token);
+    params.append("secret",process.env.HCAPTCHA_SECRET);
+    
+    await hcaptcha.post("/siteverify", params).then((resp) => {
+      statum = resp.status;
+    }).catch((err) => {
+      errout += `\n${err}`;
+    });
+    
+    if (statum !== 200) throw new Error(errout);
+    
+    await resend.post("/emails", {
       from: "Evwave Music <booking@djev.org>",
       to: ["ducote.help@gmail.com"],
       subject: `Incoming Message from ${usrname}`,
@@ -54,13 +63,14 @@ exports.handler = async function (event, context) {
       headers: {
         "X-Entity-Ref-ID": Math.floor(Date.now() / 1000).toString()
       }
+    }).then((resp) => {
+      status = resp.status;
     }).catch((err) => {
       errout += `\n${err}`;
     });
     
     respcode = status;
     
-    if (statum !== 200) throw new Error(errout);
     if (status === 200) {
       ndx = 1;
       contents = "<div class=wrapper><h2 style=color:#00FF00>Success.</h2></div><br><br><br><div class=wrapper><p>Delivered message.</p></div>";

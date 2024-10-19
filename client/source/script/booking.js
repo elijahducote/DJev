@@ -41,6 +41,7 @@ export function Booking() {
     "textarea",
     {
       name: "message",
+      form: "delivery",
       required: true,
       minlength: "14",
       maxlength: "2000",
@@ -68,8 +69,9 @@ export function Booking() {
     "form",
     {
       action: "/go/deliver",
-      method: "POST",
-      class: "booking-form"
+      method: "post",
+      class: "booking-form",
+      id: "delivery"
     }
     
     );
