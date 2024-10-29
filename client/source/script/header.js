@@ -45,7 +45,7 @@ async function interaction (e) {
   const elm = e.target,
   parent = elm.parentElement,
   attr = parent.parentElement.dataset.index,
-  links = ["HTTPS://INSTAGRAM.COM/_DJEV_","HTTPS://YOUTUBE.COM/@_EVMUSIC","HTTPS://LINKTR.EE/EVDMUSIC"];
+  links = ["HTTPS://INSTAGRAM.COM/_DJEV_","HTTPS://WWW.YOUTUBE.COM/@DJEV-MUSIC","HTTPS://LINKTR.EE/EVDMUSIC"];
   if (!attr) return;
   await sleep(1000);
   parent.style.transform = "none";
